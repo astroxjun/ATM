@@ -36,19 +36,19 @@ public class Atm {
 
 	private void printMenu() {
 		System.out.printf("--- %s BANK ---\n", this.brandName);
-		System.out.println("[01]È¸¿ø°¡ÀÔ");
-		System.out.println("[02]È¸¿øÅ»Åð");
-		System.out.println("[03]·Î±×ÀÎ");
-		System.out.println("[04]·Î±×¾Æ¿ô");
-		System.out.println("[05]°èÁÂ°³¼³");
-		System.out.println("[06]°èÁÂÃ¶È¸");
-		System.out.println("[07]°èÁÂÁ¶È¸");
-		System.out.println("[08]ÀÔ±Ý");
-		System.out.println("[09]Ãâ±Ý");
-		System.out.println("[10]ÀÌÃ¼");
-		System.out.println("[11]ÀúÀå");
-		System.out.println("[12]·Îµå");
-		System.out.println("[13]Á¾·á");
+		System.out.println("[01]È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("[02]È¸ï¿½ï¿½Å»ï¿½ï¿½");
+		System.out.println("[03]ï¿½Î±ï¿½ï¿½ï¿½");
+		System.out.println("[04]ï¿½Î±×¾Æ¿ï¿½");
+		System.out.println("[05]ï¿½ï¿½ï¿½Â°ï¿½ï¿½ï¿½");
+		System.out.println("[06]ï¿½ï¿½ï¿½ï¿½Ã¶È¸");
+		System.out.println("[07]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸");
+		System.out.println("[08]ï¿½Ô±ï¿½");
+		System.out.println("[09]ï¿½ï¿½ï¿½");
+		System.out.println("[10]ï¿½ï¿½Ã¼");
+		System.out.println("[11]ï¿½ï¿½ï¿½ï¿½");
+		System.out.println("[12]ï¿½Îµï¿½");
+		System.out.println("[13]ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	private void printAlldata() {
@@ -60,7 +60,7 @@ public class Atm {
 	public void run() {
 		while (true) {
 			printMenu();
-			int sel = selectMenu("¸Þ´º");
+			int sel = selectMenu("ï¿½Þ´ï¿½");
 			if (sel == JOIN) {
 				userManager.joinUser();}
 			else if (sel == LEAVE) {
@@ -111,10 +111,11 @@ public class Atm {
 		try {
 			result = Integer.parseInt(input);
 		} catch (Exception e) {
-			System.err.println("Á¤¼ö¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.");
+			System.err.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 		}
 	
 		return result;
+	// github test
 	}
 
 }
