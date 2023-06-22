@@ -42,8 +42,8 @@ public class Atm {
 		System.out.println("[04]로그아웃");
 		System.out.println("[05]계좌개설");
 		System.out.println("[06]계좌철회");
-		System.out.println("[07]");
-		System.out.println("[08]로그아웃");
+		System.out.println("[07]계좌조회");
+		System.out.println("[08]입금");
 		System.out.println("[09]출금");
 		System.out.println("[10]이체");
 		System.out.println("[11]저장");
@@ -63,23 +63,40 @@ public class Atm {
 			int sel = selectMenu("메뉴");
 			if (sel == JOIN) {
 				userManager.joinUser();}
-//			else if (sel == LEAVE) {
-//				userManager.leaveUser();}
-//			else if (sel == LOGIN) {
-//				loginUser();
-//			} else if (sel == CREATE_ACC) {
-//				createAcc();
-//			} else if (sel == DELETE_ACC) {
-//				deleteAcc();
-//			} else if (sel == VIEW_BALANCE) {
-//				createAcc();
-//			} else if (sel == CREATE_ACC) {
-//				createAcc();
-//			} else if (sel == CREATE_ACC) {
-//				createAcc();
-//			} else if (sel == CREATE_ACC) {
-//				createAcc();
+			else if (sel == LEAVE) {
+				userManager.leaveUser();}
+			else if (sel == LOGIN) {
+				int loginNum = userManager.loginUser();}
+			else if (sel == LOGOUT) {
+				int logoutNum = userManager.logoutUser();}
+//			else if (sel == CREATE_ACC) {
+//				accManager.createAcc();
 //			}
+//			else if (sel == DELETE_ACC) {
+//				accManager.deleteAcc();
+//			}
+//			else if (sel == VIEW_BALANCE) {
+//				accManager.viewBalance();
+//			}
+//			else if (sel == INPUT_MONEY) {
+//				accManager.inputMoney();
+//			}
+//			else if (sel == OUT_MONEY) {
+//				accManager.outMoney();
+//			}
+//			else if (sel == MOVE_ACC) {
+//				accManager.moveMoney();
+//			}
+//			else if (sel == SAVE_FILE) {
+//				fileManager.saveFile();
+//			}
+//			else if (sel == LOAD_FILE) {
+//				fileManager.loadFile();
+//			}
+			else if (sel == QUIT) {
+				break;
+			}
+		
 		
 
 		}
