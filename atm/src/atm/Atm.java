@@ -17,7 +17,7 @@ public class Atm {
 	private final int SAVE_FILE = 11;
 	private final int LOAD_FILE = 12;
 	private final int QUIT = 13;
-	
+
 	public static final Scanner scan = new Scanner(System.in);
 
 	private String brandName;
@@ -28,14 +28,14 @@ public class Atm {
 
 	public Atm(String brandName) {
 		this.brandName = brandName;
-		
-		this.userManager = UserManager.gerInstance();
+
+		this.userManager = UserManager.getInstance();
 		this.accManager = AccountManager.getInstance();
 		this.fileManager = FileManager.getInstance();
 	}
-	
+
 	private void printMenu() {
-		System.out.printf("--- %s BANK ---", this.brandName);
+		System.out.printf("--- %s BANK ---\n", this.brandName);
 		System.out.println("[01]회원가입");
 		System.out.println("[02]회원탈퇴");
 		System.out.println("[03]로그인");
@@ -46,14 +46,13 @@ public class Atm {
 		System.out.println("[08]로그아웃");
 		System.out.println("[09]출금");
 		System.out.println("[10]이체");
-		System.out.println("[11]");
-		System.out.println("[12]");
-		System.out.println("[13]");
-		System.out.print("번호 선택 : ");
+		System.out.println("[11]저장");
+		System.out.println("[12]로드");
+		System.out.println("[13]종료");
 	}
-	
+
 	private void printAlldata() {
-		for(User1 user : userManager.getList()) {
+		for (User1 user : userManager.getList()) {
 			System.out.println(user);
 		}
 	}
@@ -61,12 +60,12 @@ public class Atm {
 	public void run() {
 		while (true) {
 			printMenu();
-//			int sel = selectMenu();
-//			if (sel == JOIN) {
-//				joinUser();
-//			} else if (sel == LEAVE) {
-//				leaveUser();
-//			} else if (sel == LOGIN) {
+			int sel = selectMenu("메뉴");
+			if (sel == JOIN) {
+				userManager.joinUser();}
+//			else if (sel == LEAVE) {
+//				userManager.leaveUser();}
+//			else if (sel == LOGIN) {
 //				loginUser();
 //			} else if (sel == CREATE_ACC) {
 //				createAcc();
@@ -81,9 +80,24 @@ public class Atm {
 //			} else if (sel == CREATE_ACC) {
 //				createAcc();
 //			}
+		
 
 		}
 
+	}
+
+	private int selectMenu(String msg) {
+		System.out.print(msg + " : ");
+		String input = this.scan.next();
+
+		int result = -1;
+		try {
+			result = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.err.println("정수만 입력 가능합니다.");
+		}
+	
+		return result;
 	}
 
 }

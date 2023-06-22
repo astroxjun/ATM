@@ -82,7 +82,7 @@ public class User1 {
 //	Override
 	
 	public String toString() {
-		String str = String.format("%s(%d) : %s%s\n", this.name, this.userCode, this.id, this.password);
+		String str = String.format("%s(%d) : %s / %s", this.name, this.userCode, this.id, this.password);
 		
 		for(int x=0; x<this.accs.size(); x++) {
 			str += "\n" + this.accs.get(x);
