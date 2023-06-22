@@ -30,14 +30,21 @@ public class UserManager {
 		String id = Atm.scan.next();
 		System.out.print("PASSWORD : ");
 		String password = Atm.scan.next();
+		boolean check = true;
 
 		for (int x = 0; x < this.list.size(); x++) {
 			if (this.list.get(x).getId().equals(id) && this.list.get(x).getPassword().equals(password)) {
 				this.list.remove(x);
-				System.out.println(this.list);
+				System.out.println("탈퇴 처리가 완료 되었습니다.");
+//				System.out.println(this.list); < 확인용 지울 부분
+				break;
 			} else {
-				System.out.println("ID 혹은 비밀번호가 틀렸습니다.");
+				check = false;
 			}
+		}
+		
+		if(check=false) {
+			System.out.println("ID 혹은 비밀번호가 틀렸습니다.");
 		}
 
 	}
