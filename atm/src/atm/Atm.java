@@ -115,7 +115,7 @@ public class Atm {
 		}
 	
 		return result;
-	// github test
+	// github testing
 	}
 
 }
