@@ -42,8 +42,8 @@ public class UserManager {
 				check = false;
 			}
 		}
-		
-		if(check=false) {
+
+		if (check = false) {
 			System.out.println("ID 혹은 비밀번호가 틀렸습니다.");
 		}
 
@@ -120,7 +120,7 @@ public class UserManager {
 				User1 user = new User1(userCode, name, id, password);
 				this.list.add(user);
 				System.out.println("회원가입 완료");
-				System.out.println(this.list);
+				System.out.println(this.list); // 나중에 지울 부분
 
 			} else {
 				System.out.println("중복되는 아이디입니다.");
