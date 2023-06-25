@@ -39,6 +39,8 @@ public class User1 {
 		this.age = age;
 		this.accs = accs;
 	}
+	
+
 
 	public int getUserCode() {
 		return this.userCode;

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class UserManager {
-	int log = -1;
+	static int log = -1;
 
 	private ArrayList<User1> list = new ArrayList<User1>();
 
 //  Desing Pattern (GOF) 설계 패턴 중
 //	싱글 인스턴스를 만드는
 //	Singleton Pattern 을 사용해보자
-	
+
 //	1)생성자를 숨긴다 private
 	private UserManager() {
 	}
@@ -36,13 +36,14 @@ public class UserManager {
 			if (this.list.get(x).getId().equals(id) && this.list.get(x).getPassword().equals(password)) {
 				this.list.remove(x);
 				System.out.println("회원탈퇴가 완료 되었습니다.");
+				check = true;
 				break;
 			} else {
 				check = false;
 			}
 		}
 
-		if (check = false) {
+		if (check == false) {
 			System.out.println("ID 또는 비밀번호가 틀렸습니다.");
 		}
 
@@ -54,7 +55,7 @@ public class UserManager {
 			this.log = -1;
 			return this.log;
 		} else {
-			System.out.println("로그인 상태입니다.");
+			System.out.println("로그아웃 상태입니다.");
 			return this.log;
 		}
 	}
