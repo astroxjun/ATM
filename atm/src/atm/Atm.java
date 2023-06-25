@@ -36,19 +36,19 @@ public class Atm {
 
 	private void printMenu() {
 		System.out.printf("--- %s BANK ---\n", this.brandName);
-		System.out.println("[01]ȸ������");
-		System.out.println("[02]ȸ��Ż��");
-		System.out.println("[03]�α���");
-		System.out.println("[04]�α׾ƿ�");
-		System.out.println("[05]���°���");
-		System.out.println("[06]����öȸ");
-		System.out.println("[07]������ȸ");
-		System.out.println("[08]�Ա�");
-		System.out.println("[09]���");
-		System.out.println("[10]��ü");
-		System.out.println("[11]����");
-		System.out.println("[12]�ε�");
-		System.out.println("[13]����");
+		System.out.println("[01]회원가입");
+		System.out.println("[02]회원탈퇴");
+		System.out.println("[03]로그인");
+		System.out.println("[04]로그아웃");
+		System.out.println("[05]계좌개설");
+		System.out.println("[06]계좌철회");
+		System.out.println("[07]계좌조회");
+		System.out.println("[08]입금");
+		System.out.println("[09]출금");
+		System.out.println("[10]송금");
+		System.out.println("[11]파일저장");
+		System.out.println("[12]파일로드");
+		System.out.println("[13]종료");
 	}
 
 	private void printAlldata() {
@@ -60,7 +60,7 @@ public class Atm {
 	public void run() {
 		while (true) {
 			printMenu();
-			int sel = selectMenu("�޴�");
+			int sel = selectMenu("메뉴");
 			if (sel == JOIN) {
 				userManager.joinUser();}
 			else if (sel == LEAVE) {
@@ -111,7 +111,7 @@ public class Atm {
 		try {
 			result = Integer.parseInt(input);
 		} catch (Exception e) {
-			System.err.println("������ �Է� �����մϴ�.");
+			System.err.println("번호를 다시 입력해 주세요.");
 		}
 	
 		return result;

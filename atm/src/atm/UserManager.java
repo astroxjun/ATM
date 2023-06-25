@@ -8,18 +8,18 @@ public class UserManager {
 
 	private ArrayList<User1> list = new ArrayList<User1>();
 
-//  Desing Pattern (GOF) ¼³°è ÆÐÅÏ Áß
-//	½Ì±Û ÀÎ½ºÅÏ½º¸¦ ¸¸µå´Â
-//	Singleton Pattern À» »ç¿ëÇØº¸ÀÚ
-
-//	1)»ý¼ºÀÚ¸¦ ¼û±ä´Ù private
+//  Desing Pattern (GOF) ì„¤ê³„ íŒ¨í„´ ì¤‘
+//	ì‹±ê¸€ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë§Œë“œëŠ”
+//	Singleton Pattern ì„ ì‚¬ìš©í•´ë³´ìž
+	
+//	1)ìƒì„±ìžë¥¼ ìˆ¨ê¸´ë‹¤ private
 	private UserManager() {
 	}
 
-//	2)Å¬·¡½º ³»ºÎ¿¡¼­ ´ÜÀÏ ÀÎ½ºÅÏ½º¸¦ »ý¼ºÇØÁØ´Ù.
+//	2)í´ëž˜ìŠ¤ ë‚´ë¶€ì—ì„œ ë‹¨ì¼ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•´ì¤€ë‹¤.
 	private static UserManager instance = new UserManager();
 
-//	3) ¿ÜºÎ¿¡¼­ ´ÜÀÏ ÀÎ½ºÅÏ½º¸¦ ÂüÁ¶ÇÒ ¼ö ÀÖµµ·Ï > getter¸¦ Á¦°øÇÑ´Ù.
+//	3) ì™¸ë¶€ì—ì„œ ë‹¨ì¼ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì°¸ì¡°í•  ìˆ˜ ìžˆë„ë¡ > getterë¥¼ ì œê³µí•œë‹¤.
 	public static UserManager getInstance() {
 		return instance;
 	}
@@ -35,8 +35,7 @@ public class UserManager {
 		for (int x = 0; x < this.list.size(); x++) {
 			if (this.list.get(x).getId().equals(id) && this.list.get(x).getPassword().equals(password)) {
 				this.list.remove(x);
-				System.out.println("Å»Åð Ã³¸®°¡ ¿Ï·á µÇ¾ú½À´Ï´Ù.");
-//				System.out.println(this.list); < È®ÀÎ¿ë Áö¿ï ºÎºÐ
+				System.out.println("íšŒì›íƒˆí‡´ê°€ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				break;
 			} else {
 				check = false;
@@ -44,25 +43,25 @@ public class UserManager {
 		}
 
 		if (check = false) {
-			System.out.println("ID È¤Àº ºñ¹Ð¹øÈ£°¡ Æ²·È½À´Ï´Ù.");
+			System.out.println("ID ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.");
 		}
 
 	}
 
 	public int logoutUser() {
 		if (this.log != -1) {
-			System.out.println("·Î±×¾Æ¿ô ¿Ï·á µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ë¡œê·¸ì•„ì›ƒì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			this.log = -1;
 			return this.log;
 		} else {
-			System.out.println("·Î±×¾Æ¿ô »óÅÂÀÔ´Ï´Ù.");
+			System.out.println("ë¡œê·¸ì¸ ìƒíƒœìž…ë‹ˆë‹¤.");
 			return this.log;
 		}
 	}
 
 	public int loginUser() {
 		if (this.log != -1) {
-			System.out.println("·Î±×ÀÎ »óÅÂÀÔ´Ï´Ù.");
+			System.out.println("ë¡œê·¸ì¸ ìƒíƒœìž…ë‹ˆë‹¤.");
 			return this.log;
 		}
 
@@ -72,11 +71,11 @@ public class UserManager {
 		String password = Atm.scan.next();
 
 		if (check(id, password)) {
-			System.out.println("·Î±×ÀÎ¿¡ ¼º°øÇß½À´Ï´Ù.");
-			System.out.println("log ¹øÈ£ : " + log);
+			System.out.println("ë¡œê·¸ì¸ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤.");
+			System.out.println("log ë²ˆí˜¸ : " + log);
 			return this.log;
 		} else {
-			System.out.println("ID È¤Àº ºñ¹Ð¹øÈ£°¡ Æ²·È½À´Ï´Ù.");
+			System.out.println("ID ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.");
 			return this.log;
 		}
 
@@ -87,7 +86,6 @@ public class UserManager {
 
 		for (int x = 0; x < this.list.size(); x++) {
 			if (this.list.get(x).getId().equals(id) && this.list.get(x).getPassword().equals(password)) {
-//				this.list.get(x).contains(id) // ¹ÝÈ¯°ªÀÌ index ¾øÀ¸¸é -1À» ¹ÝÈ¯ 
 				this.log = x;
 				checkId = true;
 				break;
@@ -104,7 +102,7 @@ public class UserManager {
 		while (true) {
 
 			if (this.log != -1) {
-				System.out.println("ÇöÀç ·Î±×ÀÎ »óÅÂÀÔ´Ï´Ù.");
+				System.out.println("í˜„ìž¬ ë¡œê·¸ì¸ ìƒíƒœìž…ë‹ˆë‹¤.");
 				break;
 			}
 
@@ -119,11 +117,11 @@ public class UserManager {
 			if (!duplId(id)) {
 				User1 user = new User1(userCode, name, id, password);
 				this.list.add(user);
-				System.out.println("È¸¿ø°¡ÀÔ ¿Ï·á");
-				System.out.println(this.list); // ³ªÁß¿¡ Áö¿ï ºÎºÐ
+				System.out.println("íšŒì›ê°€ìž…ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
+				System.out.println(this.list); // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
 
 			} else {
-				System.out.println("Áßº¹µÇ´Â ¾ÆÀÌµðÀÔ´Ï´Ù.");
+				System.out.println("ì¤‘ë³µë˜ëŠ” IDìž…ë‹ˆë‹¤.");
 			}
 
 			break;
